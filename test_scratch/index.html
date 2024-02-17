@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nitkarsh Chourasia</title>
+</head>
+
+<body>
+
+    <h1>Index</h1>
+
+    <input type="text" id="userInput">
+    <button onclick="getUserInput()">Get Input</button>
+
+
+    <script>
+        function getUserInput() {
+            const userInput = document.getElementById("userInput").value;
+            console.log(userInput);
+    </script>
+
+
+    <footer>
+        <p>Name: Nitkarsh Chourasia</p>
+        <p>Email: playnitkarsh@gmail.com</p>
+    </footer>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Demo</title>
+</head>
+
+<body>
+
+    <!-- HTML Form -->
+    <form id="myForm">
+        <label for="userInput">Enter something:</label>
+        <input type="text" id="userInput">
+        <button type="button" onclick="getUserInput()">Get Input</button>
+    </form>
+
+    <!-- JavaScript Section -->
+    <script>
+        // JavaScript function to handle user input
+        function getUserInput() {
+            // Retrieve the value from the input field
+            const userInput = document.getElementById("userInput").value;
+            // Why .value is used here?
+
+            // Log the value to the console
+            console.log("User Input:", userInput);
+
+            // Optionally, you can display the input on the page
+            displayUserInput(userInput);
+        }
+
+        // JavaScript function to display user input on the page
+        function displayUserInput(input) {
+            // Create a new paragraph element
+            const paragraph = document.createElement("p");
+
+            // Set the text content of the paragraph
+            paragraph.textContent = "User Input: " + input;
+
+            // Append the paragraph to the body of the document
+            document.body.appendChild(paragraph);
+        }
+    </script>
+
+</body>
+
+</html>
