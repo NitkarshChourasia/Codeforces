@@ -824,54 +824,381 @@
 
 # A. Hit the Lottery
 
-num_list = list(map(int, input()))
+# num_list = list(map(int, input()))
 
-list_size = len(num_list)
-multiplied_list = []
-# will be used as index - finding.
-i = 1
-j = 0
-for _ in range(list_size):
-    x = list_size - i
-    expo = 10**x
+# list_size = len(num_list)
+# multiplied_list = []
+# # will be used as index - finding.
+# i = 1
+# j = 0
+# for _ in range(list_size):
+#     x = list_size - i
+#     expo = 10**x
 
-    multiplied_list.append(num_list[j] * expo)
+#     multiplied_list.append(num_list[j] * expo)
 
-    j += 1
-    i += 1
+#     j += 1
+#     i += 1
 
-# print(multiplied_list) # Debug statement to understand the program with much more depth.
+# # print(multiplied_list) # Debug statement to understand the program with much more depth.
 
-bill_list = []
+# bill_list = []
 
-i = 0
-for _ in range(list_size):
-    module_num = multiplied_list[i] % 100
-    if module_num != multiplied_list[i]:
-        div_num = multiplied_list[i] // 100
-        bill_list.append(div_num)
-    else:
-        if module_num >= 10 and module_num <= 90:
-            module_num = multiplied_list[i] % 20
-            div_num = multiplied_list[i] // 20
-            if module_num == 10:
-                bill_list.append(div_num)
-                bill_list.append(1)
-            else:
-                bill_list.append(div_num)
+# i = 0
+# for _ in range(list_size):
+#     module_num = multiplied_list[i] % 100
+#     if module_num != multiplied_list[i]:
+#         div_num = multiplied_list[i] // 100
+#         bill_list.append(div_num)
+#     else:
+#         if module_num >= 10 and module_num <= 90:
+#             module_num = multiplied_list[i] % 20
+#             div_num = multiplied_list[i] // 20
+#             if module_num == 10:
+#                 bill_list.append(div_num)
+#                 bill_list.append(1)
+#             else:
+#                 bill_list.append(div_num)
+#         else:
+#             # if module_num <= 9:
+#             module_num = multiplied_list[i] % 5
+#             div_num = multiplied_list[i] // 5
+#             bill_list.append(div_num)
+#             if module_num > 0:
+#                 bill_list.append(module_num)
+#     i += 1
+
+# print(sum(bill_list))
+
+# # * Good program I have wrote.
+# # * Tommorow write the learnings of it.
+# # * Thank you.
+
+# # * Favourite One.
+
+
+# A. Arrival of the General
+
+# # To take the total numbers of soldiers
+# soldiers_n = int(input())
+# # To take the list of heights of the soldiers
+# soldiers_height = list(map(int, input().split()))
+
+# # Finding the max and min height of total soldiers
+# minimum = min(soldiers_height)
+# maximum = max(soldiers_height)
+
+# # Printing the min and max height for debug purposes
+# # print(minimum)
+# # print(maximum)
+
+# # # Getting the index of min and max
+# # min_index = soldiers_height.index(minimum)
+# # max_index = soldiers_height.index(maximum)
+# # # Add 1 to avoid start from 0 but 1
+# # print(min_index + 1)
+# # print(max_index + 1)
+
+# min_index_dict = {}  # Key value index
+# max_index_dict = {}  # Key value index
+
+# for i, item in enumerate(soldiers_height, start=1):
+#     # if low then low_list
+#     # if high then high list
+#     if minimum == item:
+#         min_index_dict.update({item: i})
+#     elif maximum == item:
+#         max_index_dict.update({item: i})
+
+# # Closer to goal point should be selected
+
+# # Finding the closest point to the goal
+# # Run if len above one
+# # if len(min_index_dict) > 1:
+# MIN_HIGH = float("-inf")
+# for index in min_index_dict.values():
+#     if index > MIN_HIGH:
+#         MIN_HIGH = index
+
+# # Run if len above one
+# # if len(max_index_dict) > 1:
+# MAX_LOW = float("inf")
+# for index in max_index_dict.values():
+#     if index < MAX_LOW:
+#         MAX_LOW = index
+
+# min_ans = soldiers_n - MIN_HIGH
+# print(f"min_ans: {min_ans}")
+# max_ans = soldiers_n - MAX_LOW
+# print(f"max_ans: {max_ans}")
+
+# print(f"max_low: {MAX_LOW}")
+# print(f"min_high: {MIN_HIGH}")
+# print(min_ans + max_ans)
+
+
+# # Sorting lagega?
+
+
+# # A. Recovering a Small String
+
+# # English alphabets with index map in dictionary.
+# letter_index = {i + 1: chr(ord("a") + i) for i in range(26)}
+# # print(letter_index)
+
+# n = int(input())
+
+# for _ in range(n):
+#     x = int(input())
+#     if x < 3 or x > 78:
+#         print("No Solution!")
+#         continue
+
+#     for a in range(1, 26 + 1):
+#         for b in range(1, 26 + 1):
+#             for c in range(1, 26 + 1):
+#                 total = a + b + c
+#                 if total == x:
+#                     first = letter_index[a]
+#                     second = letter_index[b]
+#                     third = letter_index[c]
+#                     print(f"{first}{second}{third}")
+#                     break
+#             if total == x:
+#                 break
+#         if total == x:
+#             break
+# # * Can optimise it further for now I will pass.
+
+# A.Tricky Template
+
+# n_testcases = int(input())
+
+# for _ in range(n_testcases):
+#     str_length = int(input())
+#     a = input()
+#     b = input()
+#     c = input()
+#     for char in c:
+#         result = "YES"
+#         for i, item in enumerate(a):
+#             if item == char and i == c.index(char):
+#                 result = "NO"
+#                 print(result)
+#                 break
+#         # Nitkarsh Chourasia
+#         if result == "NO":
+#             break
+#         for i, item in enumerate(b):
+#             if item == char and i == c.index(char):
+#                 result = "NO"
+#                 print(result)
+#                 break
+#         if result == "NO":
+#             break
+#     if result != "NO":
+#         print(result)
+
+# * Try again YARR
+# * Yaar, My approach was somewhat similar to what chatGPT gave me, yaar yaar
+# * I should try it next time, for obviously sure reasons
+# * I watched the solution so I won't be doing it now but later, I guess
+
+# if c not in a and c not in b:
+#     print("YES")
+#     break
+# else:
+#     print("NO")
+#     break
+
+
+# A. Hulk
+# n = int(input())
+# DIVIDER = " that "
+# LOVE = "I love"
+# HATE = "I hate"
+
+# final_output = ""
+# # * Nitkarsh Chourasia
+# for i in range(1, n + 1):
+#     # print(i)
+#     if i % 2 == 0 and i != n + 1:
+#         final_output += LOVE
+#     elif i % 2 == 1 and i != n + 1:
+#         final_output += HATE
+#     if i != n:
+#         final_output += DIVIDER
+# print(final_output + " it")
+
+# TODO: For Instagram post
+# # A. Lucky?
+# n = int(input())
+# for _ in range(n):
+#     list_input = list(map(int, input()))
+#     left_sum = sum(list_input[0:3])
+#     right_sum = sum(list_input[3::])
+#     if left_sum == right_sum:
+#         print("YES")
+#     else:
+#         print("NO")
+
+
+# TODO: For Instagram post
+# # A. Mishka and Game
+
+# n_rounds = int(input())
+
+# MISHKA_WINS = 0
+# CHRIS_WINS = 0
+# for _ in range(n_rounds):
+#     m, c = map(int, input().split())
+#     # This more of looks like game-theory, noice!!!
+#     if m > c:
+#         MISHKA_WINS += 1
+#     elif c > m:
+#         CHRIS_WINS += 1
+# # Determine the winner
+# if MISHKA_WINS > CHRIS_WINS:
+#     print("Mishka")
+# elif CHRIS_WINS > MISHKA_WINS:
+#     print("Chris")
+# else:
+#     print("Friendship is magic!^^")
+
+
+# TODO: For Instagram post
+# # A. Plus or Minus
+# n = int(input())
+
+# for _ in range(n):
+#     a, b, c = map(int, input().split())
+
+#     if c < a:
+#         print("-")
+#     else:
+#         print("+")
+
+# # * Another Method for Plus or Minus
+# t = int(input())
+
+# for _ in range(t):
+#     a, b, c = map(int, input().split())
+#     if a + b == c:
+#         print("+")
+#     else:
+#         print("-")
+
+
+# TODO: For Instagram post
+# # Solved
+# # A. Spell Check
+# n = int(input())
+# NAME = "Timur"
+# SIZE_NAME = len(NAME)
+
+# for _ in range(n):
+#     len_given_str = int(input())
+#     given_str = input()
+
+#     if len_given_str != SIZE_NAME:
+#         print("NO")
+#     else:
+#         if NAME[0] not in given_str:
+#             print("NO")
+#         else:
+#             # print(NAME[1::])
+#             STATE = 1
+#             for char in NAME[1::]:
+#                 if char not in given_str:
+#                     STATE = 0
+#                     print("NO")
+#                     break
+#             if STATE != 0:
+#                 print("YES")
+
+
+# # TODO: For Instagram post
+# # * Make it little better before putting it on Instagram
+# # A. Brain's Photos
+# x, y = map(int, input().split())
+# color_set = set()
+# for _ in range(x):
+#     a = list(map(str, input().split()))
+#     # print(f"a: {a}")
+#     # print(f"a_list: {list(a)}")
+#     color_set.update(a)
+# color_range = list("CMY")
+# # print(color_range)
+# # print(list(color_set))
+# # print(color_set)
+# COLOR_STATE = 0
+# for ele in color_range:
+#     if ele in color_set:
+#         print("#Color")
+#         COLOR_STATE = 1
+#         break
+# if COLOR_STATE != 1:
+#     print("#Black&White")
+
+# B. Chemistry
+# TODO: For Instagram post
+# TODO: Can post it to other projects, GUI, front-end, linkedin project section, etc,...
+# TODO: Project material
+# testcases
+n = int(input())
+
+# It can be further optimised.
+# Instead of playing with the elements
+# Try to just play with the counts and manipulate the counts
+# Like ones_dict and odd_dict
+# I can minus from these lists like these
+# ones_dict - k (max minus) if stil left then
+# odd_dict - k (max minus) if still left then
+# even_dict - k (max minus) if still left then fuck it
+# If k bigger then str then abort and tell no
+
+for _ in range(n):
+    str_length, n_remove = map(int, input().split())
+    # print(f"str_length: {str_length}")
+    # print(f"n_remove: {n_remove}")
+    string = input()
+
+    # string_set = list(set(string))
+    counts = {l: string.count(l) for l in set(string)}  # Perfect
+    # print(counts)
+
+    ones_dict = dict()
+    odd_dict = dict()
+    even_dict = dict()
+    # Find the elements with 1 if not then odd
+    # * Can optimise it further by making it run a certain number of times based on remove value
+    # * Optimisation would be done, later.
+    for key, value in counts.items():
+        if value == 1:
+            ones_dict[key] = value
+        elif value % 2 == 1:
+            odd_dict[key] = value
+        elif value % 2 == 0:
+            even_dict[key] = value
+
+    # Remove from 1 if empty then from odd dict
+    for i in range(n_remove):
+        if len(ones_dict) > 0:
+            ones_dict.popitem()
+            # take key and remove it
+        elif len(odd_dict) > 0:
+            odd_dict.popitem()
+            # take key and remove it
         else:
-            # if module_num <= 9:
-            module_num = multiplied_list[i] % 5
-            div_num = multiplied_list[i] // 5
-            bill_list.append(div_num)
-            if module_num > 0:
-                bill_list.append(module_num)
-    i += 1
+            even_dict.popitem()
+            # remove any random from perfect pairs
+            # take key from even and remove it at any random order
 
-print(sum(bill_list))
+    # After the above process len(ones) = 1 and len(odd) = 0:
+    # Then print yes.
+    if len(odd_dict) == 0 and len(ones_dict) <= 1:
+        print("YES")
+    else:
+        print("NO")
 
-# * Good program I have wrote.
-# * Tommorow write the learnings of it.
-# * Thank you.
-
-# * Favourite One.
+# Will do it and can optimise it further
